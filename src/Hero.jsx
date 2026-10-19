@@ -39,7 +39,7 @@ function Hero() {
             aria-label="Menu"
             variant="secondary"
             size="lg"
-            className="my-8 mx-3 bg-indigo-800 py-3 px-3.5 border text-white shadow-indigo-800 border-indigo-900 rounded-2xl hover:bg-transparent "
+            className="my-8 mx-3 bg-indigo-800 py-3 px-3.5 border text-white shadow-indigo-800 border-indigo-900 rounded-2xl active:bg-transparent hover:bg-transparent "
           >
             See more
           </Button>

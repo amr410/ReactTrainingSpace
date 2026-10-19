@@ -31,11 +31,10 @@ function MobileMenu({ onClose }) {
         </Button>
 
         <Button
-          color="primary"
           size="sm"
           radius="full"
           onPress={onClose}
-          className="w-full font-medium hover:bg-indigo-900"
+          className="w-full font-medium hover:bg-indigo-900 bg-slate-900 "
         >
           Sign Up
         </Button>
