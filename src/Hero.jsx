@@ -1,4 +1,4 @@
-import { Button, Chip } from "@heroui/react";
+import { Button, Chip, Dropdown, Label } from "@heroui/react";
 function Hero() {
   return (
     <div className="relative flex min-h-screen w-full items-center overflow-hidden bg-linear-to-r from-slate-950 via-slate-950 to-indigo-950 px-6 py-24 text-white lg:px-16">
@@ -14,9 +14,8 @@ function Hero() {
         <div className="flex max-w-2xl flex-col items-start text-left">
           <Chip
             variant="soft"
-            color="secondary"
             size="sm"
-            className="mb-6 font-medium text-purple-200"
+            className="mb-6 font-medium text-purple-200 bg-transparent"
           >
             Exclusive Access
           </Chip>
@@ -34,13 +33,54 @@ function Hero() {
             appreciate 😉
           </p>
         </div>
-        <Button
-          className={
-            "my-8 mx-3 bg-indigo-800 py-3 px-3.5 border shadow-indigo-800 border-indigo-900 rounded-2xl hover:bg-transparent "
-          }
-        >
-          See more
-        </Button>
+
+        <Dropdown>
+          <Button
+            aria-label="Menu"
+            variant="secondary"
+            size="lg"
+            className="my-8 mx-3 bg-indigo-800 py-3 px-3.5 border text-white shadow-indigo-800 border-indigo-900 rounded-2xl hover:bg-transparent "
+          >
+            See more
+          </Button>
+          <Dropdown.Popover
+            placement="bottom left"
+            className="flex justify-start"
+          >
+            <Dropdown.Menu
+              className="bg-slate-900 flex  "
+              onAction={(key) => console.log(`Selected: ${key}`)}
+            >
+              <Dropdown.Item
+                className="hover:bg-indigo-950 hover:text-black bg-transparent justify-end!"
+                id="Home"
+                textValue="Home"
+              >
+                <Label className="text-white hover:bg-indigo-950 hover:text-black">
+                  Home
+                </Label>
+              </Dropdown.Item>
+              <Dropdown.Item
+                className="hover:bg-indigo-950 hover:text-black bg-transparent justify-end!"
+                id="What-am-i-doing"
+                textValue="What am i doing"
+              >
+                <Label className="text-white hover:bg-indigo-950 hover:text-black">
+                  What am i doing
+                </Label>
+              </Dropdown.Item>
+              <Dropdown.Item
+                className="hover:bg-indigo-950 hover:text-black bg-transparent justify-end!"
+                id="About-me"
+                textValue="About me"
+              >
+                <Label className="text-white hover:bg-indigo-950 hover:text-black">
+                  About me
+                </Label>
+              </Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown.Popover>
+        </Dropdown>
       </div>
     </div>
   );
